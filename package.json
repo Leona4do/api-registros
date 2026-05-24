@@ -1,0 +1,18 @@
+{
+  "name": "api-registros",
+  "version": "1.0.0",
+  "description": "API REST con Node.js, Express y SQLite para gestión de registros",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node src/index.js"
+  },
+  "keywords": ["api", "rest", "sqlite", "express", "crud"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "sql.js": "^1.10.2"
+  }
+}

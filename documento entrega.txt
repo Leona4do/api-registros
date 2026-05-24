@@ -1,0 +1,149 @@
+================================================================
+ DOCUMENTO DE ENTREGA - EXAMEN DE RECALIFICACIÓN SEMANA 10
+ Asignatura: Taller de Plataformas Web
+ Forma A
+================================================================
+
+ESTUDIANTE: Leonardo Suazo
+FECHA:      23/05/2026
+
+----------------------------------------------------------------
+1. REPOSITORIO GITHUB
+----------------------------------------------------------------
+
+URL del repositorio público:
+https://github.com/Leona4do/api-registros
+
+Las capturas de las pruebas realizadas en Postman están
+disponibles en:
+https://github.com/Leona4do/api-registros/tree/main/capturas
+
+El repositorio contiene el código fuente completo del proyecto,
+incluyendo:
+  - src/index.js         (servidor Express)
+  - src/database.js      (conexión y configuración SQLite)
+  - src/routes/registros.js (rutas CRUD)
+  - package.json
+  - .gitignore
+  - README.md
+
+----------------------------------------------------------------
+2. DESCRIPCIÓN DEL PROYECTO
+----------------------------------------------------------------
+
+Se desarrolló una API REST funcional utilizando Node.js con el
+framework Express y SQLite como base de datos relacional,
+implementando el modelo de datos solicitado:
+
+  Entidad: registro
+  - id_registro   (INTEGER, PK, AUTOINCREMENT)
+  - nombre        (VARCHAR)
+  - correo        (VARCHAR, UNIQUE)
+  - fecha_registro (DATETIME)
+  - estado        (VARCHAR)
+
+La API expone los siguientes endpoints en la ruta base
+/api/registros:
+
+  GET    /api/registros       → Lista todos los registros
+  GET    /api/registros/:id   → Obtiene un registro por ID
+  POST   /api/registros       → Crea un nuevo registro
+  PUT    /api/registros/:id   → Actualiza un registro existente
+  DELETE /api/registros/:id   → Elimina un registro
+
+----------------------------------------------------------------
+3. PRUEBAS DE FUNCIONAMIENTO
+----------------------------------------------------------------
+
+Las pruebas se realizaron utilizando Postman con el servidor
+corriendo localmente en http://localhost:3000
+
+--- PRUEBA 1: Crear registro (POST) ---
+Request:
+  URL:    POST http://localhost:3000/api/registros
+  Body:   {
+            "nombre": "Juan Pérez",
+            "correo": "juan@example.com",
+            "fecha_registro": "2025-05-23T10:00:00",
+            "estado": "activo"
+          }
+Response (201 Created):
+  {
+    "success": true,
+    "message": "Registro creado exitosamente",
+    "data": {
+      "id_registro": 1,
+      "nombre": "Juan Pérez",
+      "correo": "juan@example.com",
+      "fecha_registro": "2025-05-23T10:00:00",
+      "estado": "activo"
+    }
+  }
+
+--- PRUEBA 2: Obtener todos los registros (GET) ---
+Request:
+  URL:    GET http://localhost:3000/api/registros
+Response (200 OK):
+  {
+    "success": true,
+    "data": [
+      {
+        "id_registro": 1,
+        "nombre": "Juan Pérez",
+        "correo": "juan@example.com",
+        "fecha_registro": "2025-05-23T10:00:00",
+        "estado": "activo"
+      }
+    ]
+  }
+
+--- PRUEBA 3: Obtener registro por ID (GET) ---
+Request:
+  URL:    GET http://localhost:3000/api/registros/1
+Response (200 OK):
+  {
+    "success": true,
+    "data": {
+      "id_registro": 1,
+      "nombre": "Juan Pérez",
+      "correo": "juan@example.com",
+      "fecha_registro": "2025-05-23T10:00:00",
+      "estado": "activo"
+    }
+  }
+
+--- PRUEBA 4: Actualizar registro (PUT) ---
+Request:
+  URL:    PUT http://localhost:3000/api/registros/1
+  Body:   {
+            "nombre": "Juan Pérez",
+            "correo": "juan@example.com",
+            "fecha_registro": "2025-05-23T12:00:00",
+            "estado": "inactivo"
+          }
+Response (200 OK):
+  {
+    "success": true,
+    "message": "Registro actualizado exitosamente",
+    "data": {
+      "id_registro": 1,
+      "nombre": "Juan Pérez",
+      "correo": "juan@example.com",
+      "fecha_registro": "2025-05-23T12:00:00",
+      "estado": "inactivo"
+    }
+  }
+
+--- PRUEBA 5: Eliminar registro (DELETE) ---
+Request:
+  URL:    DELETE http://localhost:3000/api/registros/1
+Response (200 OK):
+  {
+    "success": true,
+    "message": "Registro eliminado exitosamente"
+  }
+
+Resultado de las pruebas: TODAS APROBADAS ✓
+Operaciones CRUD completas y funcionando correctamente.
+
+================================================================
