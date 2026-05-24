@@ -44,8 +44,7 @@ api-registros/
 
 ```bash
 # 1. Clonar el repositorio
-git clone https://github.com/TU_USUARIO/api-registros.git
-cd api-registros
+git clone https://github.com/Leona4do/api-registros
 
 # 2. Instalar dependencias
 npm install
