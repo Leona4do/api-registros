@@ -131,3 +131,19 @@ DELETE /api/registros/1
 - **Express** — Framework web
 - **sql.js** — SQLite compilado en WebAssembly (sin dependencias nativas)
 - **CORS** — Middleware para Cross-Origin Resource Sharing
+## 🧪 Capturas de pruebas en Postman
+
+### POST - Crear registro
+![POST](capturas/Captura%20Crea%20un%20registro.png)
+
+### PUT - Actualizar registro
+![PUT](capturas/Captura%20de%20actualizar.png)
+
+### DELETE - Eliminar registro
+![DELETE](capturas/Captura%20de%20eleminar.png)
+
+### GET - Ver todos los registros
+![GET todos](capturas/Captura%20de%20ver%20todos%20los%20registros.png)
+
+### GET - Ver por ID
+![GET por ID](capturas/Captura%20de%20ver%20uno%20por%20ID.png)
